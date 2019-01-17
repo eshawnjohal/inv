@@ -2,6 +2,8 @@ import departments
 
 class Product:
     def __init__(self, name, sku, department_name, cost, price, quantity):
+        if quantity < 0 or cost < 0 or price < 0:
+            raise ValueError
         self.department = departments.Departments(department_name)
         self.name = name
         self.sku = sku
