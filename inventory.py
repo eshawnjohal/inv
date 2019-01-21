@@ -66,6 +66,16 @@ class Inventory:
         except KeyError: # This will run if the SKU inputted is not found in the dictionary.
             print('SKU not found.')
 
+    def update_margin(self,sku):
+        """
+        This function updates the margin.
+        :param sku: Integer. The SKU of the product.
+        """
+        try:
+            self.inventory[sku].update_margin()  # Updates margin using function found in product module.
+        except KeyError: # This will run if the SKU inputted is not found in the dictionary.
+            print('SKU not found.')
+
     def change_quantity(self, sku, new_quantity):
         """
         This function changes the quantity of the product specified.
@@ -87,6 +97,8 @@ class Inventory:
         :param new_department: String. The new department and must also either be meat, grocery, or produce.
         """
         try:
+            if sku not in self.inventory[sku].department.department_list:
+                print('test nigga')
             self.inventory[sku].department = new_department # This will change the original department to the new department.
         except KeyError: # This will run if the SKU inputted is not found in the dictionary.
             print('SKU not found.')

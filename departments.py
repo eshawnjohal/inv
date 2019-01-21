@@ -7,7 +7,7 @@ class Departments:
     """
     def __init__(self, department_name):
         department_list = ('MEAT', 'PRODUCE', 'GROCERY') #  Defining the three departments in uppercase.
-        if department_name.upper() not in department_list: # # Removing case sensitivity by making it upper.
+        if department_name.upper() not in department_list: # Removing case sensitivity by making it uppercase.
             raise ValueError # If the department name does not match, it will raise an error.
         else:
             self.department = department_name.upper() # Sets attribute 'department' as the department name in uppercase.
